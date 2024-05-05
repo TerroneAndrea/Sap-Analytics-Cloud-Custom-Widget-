@@ -6,7 +6,7 @@
     "version": "1.0.0",
     "name": "custom widget waterfall budget with measure",
     "newInstancePrefix": "CustomWidget",
-    "description": "A sample custom widget for weBuild budget with measure",
+    "description": "A sample custom widget for a COMPANY budget with measure",
     "webcomponents": [
       {
         "kind": "main",
