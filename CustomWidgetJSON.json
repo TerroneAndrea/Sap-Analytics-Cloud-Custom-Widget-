@@ -11,7 +11,7 @@
       {
         "kind": "main",
         "tag": "bar-plot",
-        "url": "/cs.js",
+        "url": "https://github.com/TerroneAndrea/Sap-Analytics-Cloud-Custom-Widget-/blob/main/CustomWidget.js",
         "integrity": "",
         "ignoreIntegrity": true
       }
