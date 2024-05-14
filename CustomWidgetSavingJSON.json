@@ -5,7 +5,7 @@
     "id": "custom_widget_measures_saving",
     "version": "1.0.0",
     "name": "custom widget waterfall saving with measure",
-    "newInstancePrefix": "CustomWidget",
+    "newInstancePrefix": "CustomWidgetSaving",
     "description": "A sample custom widget for weBuild saving with measure",
     "webcomponents": [
       {
