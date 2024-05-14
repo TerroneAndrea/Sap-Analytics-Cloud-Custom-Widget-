@@ -1,0 +1,49 @@
+{
+    "eula": "",
+    "vendor": "REPLY",
+    "license": "",
+    "id": "custom_widget_measures_saving",
+    "version": "1.0.0",
+    "name": "custom widget waterfall saving with measure",
+    "newInstancePrefix": "CustomWidget",
+    "description": "A sample custom widget for weBuild saving with measure",
+    "webcomponents": [
+      {
+        "kind": "main",
+        "tag": "bar-plot-saving",
+        "url": "https://github.com/TerroneAndrea/Sap-Analytics-Cloud-Custom-Widget-/blob/main/CustomWidgetSaving.js",
+        "integrity": "",
+        "ignoreIntegrity": true
+      }
+    ],
+    "properties": {
+          "width": {
+              "type": "integer",
+              "default": 200
+          },
+          "height": {
+              "type": "integer",
+              "default": 200
+          }
+    },
+    "dataBindings": {
+          "myDataBinding": {
+              "feeds": [
+                  {
+            "id": "dimensions",
+            "description": "Dimensions",
+            "type": "dimension"
+          },
+          {
+            "id": "measures",
+            "description": "Measures",
+            "type": "mainStructureMember"
+          }
+              ]
+          }
+      },
+    "methods": {
+    },
+    "supportsMobile": true,
+    "events": {
+  }}
