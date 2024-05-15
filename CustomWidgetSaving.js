@@ -150,7 +150,7 @@
         else if (i===3) {
           let d = this.data[4];
           d = this.data[i] + this.data[i+1] ;
-          ctx.fillStyle = barColor;
+          ctx.fillStyle = "rgba(255, 255, 255, 1)";
           ctx.fillRect(
             margin.left + i * barWidth + 10, // Add some separation between bars
             margin.top + (1 - d / Math.max(...this.data)) * height,
@@ -158,7 +158,7 @@
             d / Math.max(...this.data) * height
           );
           
-          ctx.fillStyle = "rgba(255, 255, 255, 1)";
+          ctx.fillStyle = barColor;
           ctx.fillRect(
             margin.left + i * barWidth + 10, // Add some separation between bars
             margin.top + (1 - (this.data[i+1]+this.data[i]) / Math.max(...this.data)) * height,
