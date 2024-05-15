@@ -18,7 +18,7 @@
 
       this._shadowRoot = this.attachShadow({ mode: "open" });
       this._shadowRoot.appendChild(template.content.cloneNode(true));
-      this.data = [10, 20, 30, 40, 100];
+      this.data = [10, 20, 30, 40, 100,120,140];
       // Initialize the canvas variable
       this.canvas = document.createElement("canvas");
       this._shadowRoot.getElementById("root").appendChild(this.canvas);
