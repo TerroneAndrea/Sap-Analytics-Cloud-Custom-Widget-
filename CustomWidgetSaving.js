@@ -190,7 +190,7 @@
       ctx.font = "14px Arial";
       ctx.textAlign = "center";
       ctx.fillText(
-        d.toFixed(1).toString(), // Convert value to string
+        formattedInnerValue, // Convert value to string
         margin.left + i * barWidth + barWidth / 2, // Center text horizontally
         margin.top + (1 - (d  +this.data[3]) / Math.max(...this.data)) * height - 5 // Place text above the bar
       );
@@ -202,7 +202,7 @@
       ctx.font = "14px Arial";
       ctx.textAlign = "center";
       ctx.fillText(
-        d.toFixed(1).toString(), // Convert value to string
+        formattedInnerValue, // Convert value to string
         margin.left + i * barWidth + barWidth / 2, // Center text horizontally
         margin.top + (1 - d/ Math.max(...this.data)) * height - 5 // Place text above the bar
       );
@@ -214,7 +214,7 @@
       ctx.font = "14px Arial";
       ctx.textAlign = "center";
       ctx.fillText(
-        d.toFixed(1).toString(), // Convert value to string
+        formattedInnerValue, // Convert value to string
         margin.left + i * barWidth + barWidth / 2, // Center text horizontally
         margin.top + (1 - d/ Math.max(...this.data)) * height - 5 // Place text above the bar
       );
@@ -226,7 +226,7 @@
       ctx.font = "14px Arial";
       ctx.textAlign = "center";
       ctx.fillText(
-        d.toFixed(1).toString(), // Convert value to string
+        formattedInnerValue, // Convert value to string
         margin.left + i * barWidth + barWidth / 2, // Center text horizontally
         margin.top + (1 - (d  +this.data[i-1]) / Math.max(...this.data)) * height - 5 // Place text above the bar
       );
@@ -238,7 +238,7 @@
       ctx.font = "14px Arial";
       ctx.textAlign = "center";
       ctx.fillText(
-        d.toFixed(1).toString(), // Convert value to string
+        formattedInnerValue, // Convert value to string
         margin.left + i * barWidth + barWidth / 2, // Center text horizontally
         margin.top + (1 - (d  +this.data[i-1]) / Math.max(...this.data)) * height - 5 // Place text above the bar
       );
@@ -248,7 +248,7 @@
       ctx.font = "14px Arial";
       ctx.textAlign = "center";
       ctx.fillText(
-        d.toFixed(1).toString(), // Convert value to string
+        formattedValue, // Convert value to string
         margin.left + i * barWidth + barWidth / 2, // Center text horizontally
         margin.top + (1 - d / Math.max(...this.data)) * height - 5 // Place text above the bar
       );
