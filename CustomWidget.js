@@ -81,6 +81,7 @@
         let barColor;
         if (i === 0) barColor = "rgb(33, 168, 40)"; // First number in green
         else if (i === this.data.length - 1) barColor = "rgb(214, 47, 47)"; // Last number in red
+        else if (i === 3) barColor = "rgb(64, 64, 64)";
         else barColor = "rgb(191, 191, 191"; // Other numbers in grey
 
         if (i === 0 || i === 1) {
@@ -108,7 +109,17 @@
             barWidth - 20, // Reduce the width to include separation
             this.data[i - 1] / Math.max(...this.data) * height
           );
-        } else {
+        } 
+        else if (i === 3) {
+          ctx.fillStyle = barColor;
+          ctx.fillRect(
+            margin.left + i * barWidth + 10, // Add some separation between bars
+            margin.top + (1 - d / Math.max(...this.data)) * height,
+            barWidth - 20, // Reduce the width to include separation
+            d / Math.max(...this.data) * height
+          );
+        } 
+        else {
           ctx.fillStyle = barColor;
           ctx.fillRect(
             margin.left + i * barWidth + 10, // Add some separation between bars
