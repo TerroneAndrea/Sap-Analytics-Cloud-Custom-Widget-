@@ -126,7 +126,7 @@
           d = d - this.data[i - 1];
           const formattedInnerValue = this.formatter.format(d);
           ctx.fillStyle = "black";
-          ctx.font = "12px Arial";
+          ctx.font = "13px Arial";
           ctx.textAlign = "center";
           ctx.fillText(
             formattedInnerValue, // Use formatted value
@@ -135,7 +135,7 @@
           );
         } else {
           ctx.fillStyle = "black";
-          ctx.font = "12px Arial";
+          ctx.font = "13px Arial";
           ctx.textAlign = "center";
           ctx.fillText(
             formattedValue, // Use formatted value
