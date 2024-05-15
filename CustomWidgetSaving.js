@@ -148,7 +148,7 @@
         const formattedValue = this.formatter.format(d);
 
         if (i==3) {
-          d = d - this.data[i - 1];
+          d = d - this.data[i-1];
           const formattedInnerValue = this.formatter.format(d);
           ctx.fillStyle = "black";
       ctx.font = "14px Arial";
