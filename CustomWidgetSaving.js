@@ -23,6 +23,12 @@
       this.canvas = document.createElement("canvas");
       this._shadowRoot.getElementById("root").appendChild(this.canvas);
 
+      // Create number formatter
+      this.formatter = new Intl.NumberFormat('en-US', {
+        minimumFractionDigits: 1,
+        maximumFractionDigits: 1,
+      });
+
       this.render();
     }
 
@@ -129,8 +135,11 @@
 
         //QUA
 
+        const formattedValue = this.formatter.format(d);
+
         if (i==2) {
           d = d -  this.data[i-1]  ;
+          const formattedInnerValue = this.formatter.format(d);
           ctx.fillStyle = "black";
       ctx.font = "14px Arial";
       ctx.textAlign = "center";
