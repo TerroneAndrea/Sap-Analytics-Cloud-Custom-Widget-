@@ -204,7 +204,7 @@
       ctx.fillText(
         d.toFixed(1).toString(), // Convert value to string
         margin.left + i * barWidth + barWidth / 2, // Center text horizontally
-        margin.top + (1 - (d ) / Math.max(...this.data)) * height - 5 // Place text above the bar
+        margin.top + (1 - d/ Math.max(...this.data)) * height - 5 // Place text above the bar
       );
         }
         else if (i===4) {
@@ -216,7 +216,7 @@
       ctx.fillText(
         d.toFixed(1).toString(), // Convert value to string
         margin.left + i * barWidth + barWidth / 2, // Center text horizontally
-        margin.top + (1 - (d ) / Math.max(...this.data)) * height - 5 // Place text above the bar
+        margin.top + (1 - d/ Math.max(...this.data)) * height - 5 // Place text above the bar
       );
         }
           else if (i===5) {
