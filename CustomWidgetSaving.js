@@ -187,7 +187,7 @@
           d = this.data[4];
           const formattedInnerValue = this.formatter.format(d);
           ctx.fillStyle = "black";
-      ctx.font = "14px Arial";
+      ctx.font = "12px Arial";
       ctx.textAlign = "center";
       ctx.fillText(
         formattedInnerValue, // Convert value to string
@@ -199,7 +199,7 @@
              d = this.data[3];
           const formattedInnerValue = this.formatter.format(d);
           ctx.fillStyle = "black";
-      ctx.font = "14px Arial";
+      ctx.font = "12px Arial";
       ctx.textAlign = "center";
       ctx.fillText(
         formattedInnerValue, // Convert value to string
@@ -211,7 +211,7 @@
              d = this.data[2];
           const formattedInnerValue = this.formatter.format(d);
           ctx.fillStyle = "black";
-      ctx.font = "14px Arial";
+      ctx.font = "12px Arial";
       ctx.textAlign = "center";
       ctx.fillText(
         formattedInnerValue, // Convert value to string
@@ -223,7 +223,7 @@
              d = this.data[6];
           const formattedInnerValue = this.formatter.format(d);
           ctx.fillStyle = "black";
-      ctx.font = "14px Arial";
+      ctx.font = "12px Arial";
       ctx.textAlign = "center";
       ctx.fillText(
         formattedInnerValue, // Convert value to string
@@ -235,7 +235,7 @@
              d = this.data[5];
           const formattedInnerValue = this.formatter.format(d);
           ctx.fillStyle = "black";
-      ctx.font = "14px Arial";
+      ctx.font = "12px Arial";
       ctx.textAlign = "center";
       ctx.fillText(
         formattedInnerValue, // Convert value to string
@@ -245,7 +245,7 @@
         }
         else{
           ctx.fillStyle = "black";
-      ctx.font = "14px Arial";
+      ctx.font = "12px Arial";
       ctx.textAlign = "center";
       ctx.fillText(
         formattedValue, // Convert value to string
