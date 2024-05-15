@@ -163,7 +163,7 @@
 
 
       ctx.fillStyle = "black";
-      ctx.font = "12px Arial";
+      ctx.font = "10px Arial";
       ctx.textAlign = "center";
       ctx.fillText(
       columnLabels[i], // Column label
