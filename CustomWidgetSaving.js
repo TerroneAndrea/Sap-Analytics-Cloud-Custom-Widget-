@@ -101,7 +101,7 @@
           d / Math.max(...this.data) * height
         );
         }else if (i===2) {
-          
+          let d = this.data[3];
        ctx.fillStyle = barColor;
         ctx.fillRect(
           margin.left + i * barWidth + 10, // Add some separation between bars
@@ -111,9 +111,44 @@
         );
 
         }
+
+          else if (i===4) {
+          let d = this.data[2];
+       ctx.fillStyle = barColor;
+        ctx.fillRect(
+          margin.left + i * barWidth + 10, // Add some separation between bars
+          margin.top + (1 - d / Math.max(...this.data)) * height,
+          barWidth - 20, // Reduce the width to include separation
+          d / Math.max(...this.data) * height
+        );
+
+        }
+            else if (i===5) {
+          let d = this.data[6];
+       ctx.fillStyle = barColor;
+        ctx.fillRect(
+          margin.left + i * barWidth + 10, // Add some separation between bars
+          margin.top + (1 - d / Math.max(...this.data)) * height,
+          barWidth - 20, // Reduce the width to include separation
+          d / Math.max(...this.data) * height
+        );
+
+        }
+              else if (i===5) {
+          let d = this.data[2];
+       ctx.fillStyle = barColor;
+        ctx.fillRect(
+          margin.left + i * barWidth + 10, // Add some separation between bars
+          margin.top + (1 - d / Math.max(...this.data)) * height,
+          barWidth - 20, // Reduce the width to include separation
+          d / Math.max(...this.data) * height
+        );
+
+        }
+              
           
         else if (i===3) {
-          
+          let d = this.data[4];
           d = this.data[i] + this.data[i-1] ;
           ctx.fillStyle = barColor;
           ctx.fillRect(
