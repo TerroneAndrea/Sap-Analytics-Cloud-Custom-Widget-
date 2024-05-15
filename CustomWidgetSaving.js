@@ -161,7 +161,7 @@
           ctx.fillStyle = "rgba(255, 255, 255, 1)";
           ctx.fillRect(
             margin.left + i * barWidth + 10, // Add some separation between bars
-            margin.top + (1 - (this.data[i+1]) / Math.max(...this.data)) * height,
+            margin.top + (1 - (this.data[i+1]+this.data[i]) / Math.max(...this.data)) * height,
             barWidth - 20, // Reduce the width to include separation
             this.data[i+1] / Math.max(...this.data) * height
           );
