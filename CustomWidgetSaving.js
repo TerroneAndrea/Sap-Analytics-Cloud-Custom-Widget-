@@ -105,40 +105,30 @@
        ctx.fillStyle = barColor;
         ctx.fillRect(
           margin.left + i * barWidth + 10, // Add some separation between bars
-          margin.top + (1 - this.data[i+1] / Math.max(...this.data)) * height,
+          margin.top + (1 - d / Math.max(...this.data)) * height,
           barWidth - 20, // Reduce the width to include separation
-          this.data[i+1] / Math.max(...this.data) * height
+          d / Math.max(...this.data) * height
         );
 
         }
-          else if (i===4) {
           
-       ctx.fillStyle = barColor;
-        ctx.fillRect(
-          margin.left + i * barWidth + 10, // Add some separation between bars
-          margin.top + (1 - this.data[i-2] / Math.max(...this.data)) * height,
-          barWidth - 20, // Reduce the width to include separation
-          this.data[i-2] / Math.max(...this.data) * height
-        );
-
-        }
         else if (i===3) {
           
           d = this.data[i] + this.data[i-1] ;
           ctx.fillStyle = barColor;
           ctx.fillRect(
             margin.left + i * barWidth + 10, // Add some separation between bars
-            margin.top + (1 - this.data[i+1] / Math.max(...this.data)) * height,
+            margin.top + (1 - d / Math.max(...this.data)) * height,
             barWidth - 20, // Reduce the width to include separation
-            this.data[i+1] / Math.max(...this.data) * height
+            d / Math.max(...this.data) * height
           );
           
           ctx.fillStyle = "rgba(255, 255, 255, 1)";
           ctx.fillRect(
             margin.left + i * barWidth + 10, // Add some separation between bars
-            margin.top + (1 - this.data[i] / Math.max(...this.data)) * height,
+            margin.top + (1 - this.data[i-1] / Math.max(...this.data)) * height,
             barWidth - 20, // Reduce the width to include separation
-            this.data[i] / Math.max(...this.data) * height
+            this.data[i-1] / Math.max(...this.data) * height
           );
 
         }
