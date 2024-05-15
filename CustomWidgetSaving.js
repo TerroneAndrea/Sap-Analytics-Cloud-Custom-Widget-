@@ -184,7 +184,55 @@
         const formattedValue = this.formatter.format(d);
 
         if (i==3) {
-          d = d - this.data[i-1];
+          d = d - this.data[4];
+          const formattedInnerValue = this.formatter.format(d);
+          ctx.fillStyle = "black";
+      ctx.font = "14px Arial";
+      ctx.textAlign = "center";
+      ctx.fillText(
+        d.toFixed(1).toString(), // Convert value to string
+        margin.left + i * barWidth + barWidth / 2, // Center text horizontally
+        margin.top + (1 - (d  +this.data[i-1]) / Math.max(...this.data)) * height - 5 // Place text above the bar
+      );
+        }
+           else if (i===2) {
+             d = this.data[3];
+          const formattedInnerValue = this.formatter.format(d);
+          ctx.fillStyle = "black";
+      ctx.font = "14px Arial";
+      ctx.textAlign = "center";
+      ctx.fillText(
+        d.toFixed(1).toString(), // Convert value to string
+        margin.left + i * barWidth + barWidth / 2, // Center text horizontally
+        margin.top + (1 - (d  +this.data[i-1]) / Math.max(...this.data)) * height - 5 // Place text above the bar
+      );
+        }
+        else if (i===4) {
+             d = this.data[2];
+          const formattedInnerValue = this.formatter.format(d);
+          ctx.fillStyle = "black";
+      ctx.font = "14px Arial";
+      ctx.textAlign = "center";
+      ctx.fillText(
+        d.toFixed(1).toString(), // Convert value to string
+        margin.left + i * barWidth + barWidth / 2, // Center text horizontally
+        margin.top + (1 - (d  +this.data[i-1]) / Math.max(...this.data)) * height - 5 // Place text above the bar
+      );
+        }
+          else if (i===5) {
+             d = this.data[6];
+          const formattedInnerValue = this.formatter.format(d);
+          ctx.fillStyle = "black";
+      ctx.font = "14px Arial";
+      ctx.textAlign = "center";
+      ctx.fillText(
+        d.toFixed(1).toString(), // Convert value to string
+        margin.left + i * barWidth + barWidth / 2, // Center text horizontally
+        margin.top + (1 - (d  +this.data[i-1]) / Math.max(...this.data)) * height - 5 // Place text above the bar
+      );
+        }
+        else if (i===6) {
+             d = this.data[5];
           const formattedInnerValue = this.formatter.format(d);
           ctx.fillStyle = "black";
       ctx.font = "14px Arial";
