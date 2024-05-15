@@ -88,7 +88,7 @@
         let d = this.data[i];
         let barColor;
         if (i === 0 || i === 1) barColor = "green"; // First number in green
-        else if (i === this.data.length - 1 || i === this.data.lenght - 2) barColor = "red"; // Last number in red
+        else if (i === 5 || i === 6) barColor = "red"; // Last number in red
         else barColor = "grey"; // Other numbers in grey
 
 
