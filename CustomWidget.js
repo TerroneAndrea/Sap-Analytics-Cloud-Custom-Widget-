@@ -79,9 +79,9 @@
       for (let i = 0; i < this.data.length; i++) {
         let d = this.data[i];
         let barColor;
-        if (i === 0) barColor = "green"; // First number in green
-        else if (i === this.data.length - 1) barColor = "red"; // Last number in red
-        else barColor = "grey"; // Other numbers in grey
+        if (i === 0) barColor = "rgb(33, 168, 40)"; // First number in green
+        else if (i === this.data.length - 1) barColor = "rgb(214, 47, 47)"; // Last number in red
+        else barColor = "rgb(191, 191, 191"; // Other numbers in grey
 
         if (i === 0 || i === 1) {
           ctx.fillStyle = barColor;
