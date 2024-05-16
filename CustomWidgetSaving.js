@@ -135,8 +135,8 @@
         );
 
         }
-              else if (i===5) {
-          let d = this.data[2];
+              else if (i===6) {
+          let d = this.data[5];
        ctx.fillStyle = barColor;
         ctx.fillRect(
           margin.left + i * barWidth + 10, // Add some separation between bars
