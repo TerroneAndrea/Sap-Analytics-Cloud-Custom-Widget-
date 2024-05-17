@@ -81,8 +81,8 @@
 
 
 
-      
-
+      const rend= Math.max(...this.data)- Math.min(...this.data);
+      const maxx= Math.max(...this.data)
       // Draw bars using a for loop
       for (let i = 0; i < this.data.length; i++) {
         let d = this.data[i];
@@ -96,19 +96,19 @@
         if (i===0 || i===1) {
         ctx.fillStyle = barColor;
         ctx.fillRect(
-          margin.left + i * barWidth + 10, // Add some separation between bars
-          margin.top + (1 - d / Math.max(...this.data)) * height,
+          margin.left + i * barWidth + 10 , // Add some separation between bars
+          margin.top + ((maxx/rend*height)-(d/rend*height)) ,
           barWidth - 20, // Reduce the width to include separation
-          d / Math.max(...this.data) * height
+          d / rend * height
         );
         }else if (i===2) {
           let d = this.data[3];
        ctx.fillStyle = barColor;
         ctx.fillRect(
-          margin.left + i * barWidth + 10, // Add some separation between bars
-          margin.top + (1 - d / Math.max(...this.data)) * height,
+          margin.left + i * barWidth + 10 , // Add some separation between bars
+          margin.top + ((maxx/rend*height)-(d/rend*height)),
           barWidth - 20, // Reduce the width to include separation
-          d / Math.max(...this.data) * height
+          d / rend * height
         );
 
         }
@@ -117,10 +117,10 @@
           let d = this.data[2];
        ctx.fillStyle = barColor;
         ctx.fillRect(
-          margin.left + i * barWidth + 10, // Add some separation between bars
-          margin.top + (1 - d / Math.max(...this.data)) * height,
+          margin.left + i * barWidth + 10 , // Add some separation between bars
+          margin.top + ((maxx/rend*height)-(d/rend*height)),
           barWidth - 20, // Reduce the width to include separation
-          d / Math.max(...this.data) * height
+          d / rend * height
         );
 
         }
@@ -129,9 +129,9 @@
        ctx.fillStyle = barColor;
         ctx.fillRect(
           margin.left + i * barWidth + 10, // Add some separation between bars
-          margin.top + (1 - d / Math.max(...this.data)) * height,
+          margin.top +  maxx/ rend * height,
           barWidth - 20, // Reduce the width to include separation
-          d / Math.max(...this.data) * height
+          -d / rend * height
         );
 
         }
@@ -140,9 +140,9 @@
        ctx.fillStyle = barColor;
         ctx.fillRect(
           margin.left + i * barWidth + 10, // Add some separation between bars
-          margin.top + (1 - d / Math.max(...this.data)) * height,
+          margin.top +  maxx/ rend * height,
           barWidth - 20, // Reduce the width to include separation
-          d / Math.max(...this.data) * height
+          -d / rend * height
         );
 
         }
@@ -150,22 +150,22 @@
           
         else if (i===3) {
           let d = this.data[4];
-          d = this.data[i] + this.data[i+1] ;
-          ctx.fillStyle = "rgba(255, 255, 255, 1)";
-          ctx.fillRect(
-            margin.left + i * barWidth + 10, // Add some separation between bars
-            margin.top + (1 - d / Math.max(...this.data)) * height,
-            barWidth - 20, // Reduce the width to include separation
-            d / Math.max(...this.data) * height
-          );
-          
+          d =  this.data[i+1] ;
           ctx.fillStyle = barColor;
           ctx.fillRect(
-            margin.left + i * barWidth + 10, // Add some separation between bars
-            margin.top + (1 - (this.data[i+1]+this.data[i]) / Math.max(...this.data)) * height,
+            margin.left + i * barWidth + 10 , // Add some separation between bars
+            margin.top + ((maxx/rend*height)-(this.data[i+1]/rend*height) -(this.data[i]/rend*height)),
             barWidth - 20, // Reduce the width to include separation
-            this.data[i+1] / Math.max(...this.data) * height
+            d / rend * height
           );
+          
+          //ctx.fillStyle = "rgba(255, 255, 255, 1)";  da scambiare con quello sopra
+          //ctx.fillRect(
+          //  margin.left + i * barWidth + 10, // Add some separation between bars
+          //  margin.top + (1 - (this.data[i+1]+this.data[i]) / rend) * height,
+          //  barWidth - 20, // Reduce the width to include separation
+          //  this.data[i+1] / rend * height
+         // );
 
         }
         else {
@@ -173,19 +173,20 @@
         ctx.fillStyle = barColor;
         ctx.fillRect(
           margin.left + i * barWidth + 10, // Add some separation between bars
-          margin.top + (1 - d / Math.max(...this.data)) * height,
+          margin.top + (1 - d / rend) * height,
           barWidth - 20, // Reduce the width to include separation
-          d / Math.max(...this.data) * height
+          d / rend * height
         );
 
         }
 
-        //QUA
+        
 
-        const formattedValue = this.formatter.format(d);
 
-        if (i==3) {
-          d = this.data[4];
+
+        //QUA//QUA//QUA//QUA//QUA
+        if (i===0 || i===1) {
+          d = this.data[i];
           const formattedInnerValue = this.formatter.format(d);
           ctx.fillStyle = "black";
       ctx.font = "12px Arial";
@@ -193,7 +194,7 @@
       ctx.fillText(
         formattedInnerValue, // Convert value to string
         margin.left + i * barWidth + barWidth / 2, // Center text horizontally
-        margin.top + (1 - (d  +this.data[3]) / Math.max(...this.data)) * height - 5 // Place text above the bar
+        margin.top + ((maxx/rend*height)-(d/rend*height)) - 5 // Place text above the bar
       );
         }
            else if (i===2) {
@@ -205,56 +206,73 @@
       ctx.fillText(
         formattedInnerValue, // Convert value to string
         margin.left + i * barWidth + barWidth / 2, // Center text horizontally
-        margin.top + (1 - d/ Math.max(...this.data)) * height - 5 // Place text above the bar
+        margin.top + ((maxx/rend*height)-(d/rend*height)) - 5 // Place text above the bar
       );
         }
-        else if (i===4) {
-             d = this.data[2];
-          const formattedInnerValue = this.formatter.format(d);
-          ctx.fillStyle = "black";
-      ctx.font = "12px Arial";
-      ctx.textAlign = "center";
-      ctx.fillText(
-        formattedInnerValue, // Convert value to string
-        margin.left + i * barWidth + barWidth / 2, // Center text horizontally
-        margin.top + (1 - d/ Math.max(...this.data)) * height - 5 // Place text above the bar
-      );
-        }
-          else if (i===5) {
-             d = this.data[6];
-          const formattedInnerValue = this.formatter.format(d);
-          ctx.fillStyle = "black";
-      ctx.font = "12px Arial";
-      ctx.textAlign = "center";
-      ctx.fillText(
-        formattedInnerValue, // Convert value to string
-        margin.left + i * barWidth + barWidth / 2, // Center text horizontally
-        margin.top + (1 - (d  +this.data[i-1]) / Math.max(...this.data)) * height - 5 // Place text above the bar
-      );
-        }
-        else if (i===6) {
-             d = this.data[5];
-          const formattedInnerValue = this.formatter.format(d);
-          ctx.fillStyle = "black";
-      ctx.font = "12px Arial";
-      ctx.textAlign = "center";
-      ctx.fillText(
-        formattedInnerValue, // Convert value to string
-        margin.left + i * barWidth + barWidth / 2, // Center text horizontally
-        margin.top + (1 - (d  +this.data[i-1]) / Math.max(...this.data)) * height - 5 // Place text above the bar
-      );
-        }
-        else{
-          ctx.fillStyle = "black";
-      ctx.font = "12px Arial";
-      ctx.textAlign = "center";
-      ctx.fillText(
-        formattedValue, // Convert value to string
-        margin.left + i * barWidth + barWidth / 2, // Center text horizontally
-        margin.top + (1 - d / Math.max(...this.data)) * height - 5 // Place text above the bar
-      );
-        //QUA
-    }
+
+        else if (i===3) {
+          d = this.data[4];
+       const formattedInnerValue = this.formatter.format(d);
+       ctx.fillStyle = "black";
+   ctx.font = "12px Arial";
+   ctx.textAlign = "center";
+   ctx.fillText(
+     formattedInnerValue, // Convert value to string
+     margin.left + i * barWidth + barWidth / 2, // Center text horizontally
+     margin.top + ((maxx/rend*height)-(this.data[i+1]/rend*height) -(this.data[i]/rend*height)) - 5 // Place text above the bar
+   );
+     }
+
+
+     else if (i===4) {
+      d = this.data[2];
+   const formattedInnerValue = this.formatter.format(d);
+   ctx.fillStyle = "black";
+ctx.font = "12px Arial";
+ctx.textAlign = "center";
+ctx.fillText(
+ formattedInnerValue, // Convert value to string
+ margin.left + i * barWidth + barWidth / 2, // Center text horizontally
+ margin.top + ((maxx/rend*height)-(d/rend*height)) - 5 // Place text above the bar
+);
+ }
+
+
+ else if (i===5) {
+  d = this.data[6];
+const formattedInnerValue = this.formatter.format(d);
+ctx.fillStyle = "black";
+ctx.font = "12px Arial";
+ctx.textAlign = "center";
+ctx.fillText(
+formattedInnerValue, // Convert value to string
+margin.left + i * barWidth + barWidth / 2, // Center text horizontally
+margin.top +  maxx/ rend * height - 5 // Place text above the bar
+);
+}
+
+
+else if (i===6) {
+  d = this.data[5];
+const formattedInnerValue = this.formatter.format(d);
+ctx.fillStyle = "black";
+ctx.font = "12px Arial";
+ctx.textAlign = "center";
+ctx.fillText(
+formattedInnerValue, // Convert value to string
+margin.left + i * barWidth + barWidth / 2, // Center text horizontally
+margin.top +  maxx/ rend * height - 5 // Place text above the bar
+);
+}
+
+    //QUA//QUA//QUA//QUA//QUA
+
+
+
+
+
+
+        
 
 
       ctx.fillStyle = "black";
@@ -268,8 +286,8 @@
       }
       
       ctx.beginPath();
-      ctx.moveTo(margin.left, margin.top + height);
-      ctx.lineTo(margin.left + width, margin.top + height);
+      ctx.moveTo(margin.left, margin.top + maxx/ rend * height );
+      ctx.lineTo(margin.left + width, margin.top +  maxx/ rend * height);
       ctx.strokeStyle = "black";
       ctx.lineWidth = 2;
       ctx.stroke();
@@ -282,4 +300,3 @@
   customElements.define("bar-plot-saving", BarPlot);
 
 })();
-
