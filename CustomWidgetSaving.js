@@ -240,6 +240,8 @@ ctx.fillText(
 
  else if (i===5) {
   d = this.data[6];
+
+  if (d<0) {
 const formattedInnerValue = this.formatter.format(d);
 ctx.fillStyle = "black";
 ctx.font = "12px Arial";
@@ -248,12 +250,25 @@ ctx.fillText(
 formattedInnerValue, // Convert value to string
 margin.left + i * barWidth + barWidth / 2, // Center text horizontally
 margin.top +  maxx/ rend * height - 5 // Place text above the bar
-);
+);}
+
+else {const formattedInnerValue = this.formatter.format(d);
+  ctx.fillStyle = "black";
+  ctx.font = "12px Arial";
+  ctx.textAlign = "center";
+  ctx.fillText(
+  formattedInnerValue, // Convert value to string
+  margin.left + i * barWidth + barWidth / 2, // Center text horizontally
+  margin.top +  maxx/ rend * height -d / rend * height - 5 // Place text above the bar
+  );}
 }
 
 
 else if (i===6) {
   d = this.data[5];
+
+
+  if (d<0) {
 const formattedInnerValue = this.formatter.format(d);
 ctx.fillStyle = "black";
 ctx.font = "12px Arial";
@@ -262,7 +277,17 @@ ctx.fillText(
 formattedInnerValue, // Convert value to string
 margin.left + i * barWidth + barWidth / 2, // Center text horizontally
 margin.top +  maxx/ rend * height - 5 // Place text above the bar
-);
+);}
+
+else {const formattedInnerValue = this.formatter.format(d);
+  ctx.fillStyle = "black";
+  ctx.font = "12px Arial";
+  ctx.textAlign = "center";
+  ctx.fillText(
+  formattedInnerValue, // Convert value to string
+  margin.left + i * barWidth + barWidth / 2, // Center text horizontally
+  margin.top +  maxx/ rend * height -d / rend * height - 5 // Place text above the bar
+  );}
 }
 
     //QUA//QUA//QUA//QUA//QUA
@@ -300,3 +325,4 @@ margin.top +  maxx/ rend * height - 5 // Place text above the bar
   customElements.define("bar-plot-saving", BarPlot);
 
 })();
+
