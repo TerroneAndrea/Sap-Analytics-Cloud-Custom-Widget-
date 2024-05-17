@@ -125,25 +125,49 @@
 
         }
             else if (i===5) {
-          let d = this.data[6];
+              let d = this.data[6];
+              if (d<0) {
+          
        ctx.fillStyle = barColor;
         ctx.fillRect(
           margin.left + i * barWidth + 10, // Add some separation between bars
           margin.top +  maxx/ rend * height,
           barWidth - 20, // Reduce the width to include separation
           -d / rend * height
+        );}
+
+        else {
+          ctx.fillStyle = "rgb(33, 168, 40)";
+        ctx.fillRect(
+          margin.left + i * barWidth + 10, // Add some separation between bars
+          margin.top +  maxx/ rend * height,
+          barWidth - 20, // Reduce the width to include separation
+          -d / rend * height
         );
+        }
 
         }
               else if (i===6) {
           let d = this.data[5];
+
+          if (d<0) {
        ctx.fillStyle = barColor;
         ctx.fillRect(
           margin.left + i * barWidth + 10, // Add some separation between bars
           margin.top +  maxx/ rend * height,
           barWidth - 20, // Reduce the width to include separation
           -d / rend * height
+        );}
+
+        else {
+          ctx.fillStyle = "rgb(33, 168, 40)";
+        ctx.fillRect(
+          margin.left + i * barWidth + 10, // Add some separation between bars
+          margin.top +  maxx/ rend * height,
+          barWidth - 20, // Reduce the width to include separation
+          -d / rend * height
         );
+        }
 
         }
               
