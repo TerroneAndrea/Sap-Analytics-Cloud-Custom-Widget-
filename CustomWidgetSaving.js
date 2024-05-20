@@ -366,6 +366,23 @@ else {const formattedInnerValue = this.formatter.format(d);
       ctx.lineWidth = 2;
       ctx.stroke();
 
+
+
+      ctx.beginPath();
+      ctx.moveTo(margin.left + 2 * barWidth + 10, margin.top + ((maxx/rend*height)-(this.data[3]/rend*height)) );
+      ctx.lineTo(margin.left + 3 * barWidth + 10, margin.top + ((maxx/rend*height)-(this.data[3]/rend*height)) );
+      ctx.strokeStyle = "rgb(191, 191, 191)";
+      ctx.lineWidth = 1;
+      ctx.stroke();
+
+
+      ctx.beginPath();
+      ctx.moveTo(margin.left + 3 * barWidth + 10, margin.top + ((maxx/rend*height)-(this.data[3+1]/rend*height) -(this.data[3]/rend*height)) );
+      ctx.lineTo(margin.left + 4 * barWidth + 10, margin.top + ((maxx/rend*height)-(this.data[3+1]/rend*height) -(this.data[3]/rend*height)));
+      ctx.strokeStyle = "rgb(191, 191, 191)";
+      ctx.lineWidth = 1;
+      ctx.stroke();
+
       
 
     }
