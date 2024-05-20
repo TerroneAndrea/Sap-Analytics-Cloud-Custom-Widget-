@@ -74,6 +74,20 @@
 
       const barWidth = width / this.data.length;
       const columnLabels = ['INITIAL', 'AWARDED', 'FORECAST', 'ROLLING', 'GAP'];
+      
+
+      let rend;
+      let maxx;
+      if (Math.min(...this.data)<0){
+       rend= Math.max(...this.data)- Math.min(...this.data);
+       maxx= Math.max(...this.data)
+      }
+      else {
+         rend= Math.max(...this.data);
+         maxx= Math.max(...this.data)
+      }
+
+
 
       // Draw bars using a for loop
       for (let i = 0; i < this.data.length; i++) {
@@ -88,44 +102,44 @@
           ctx.fillStyle = barColor;
           ctx.fillRect(
             margin.left + i * barWidth + 10, // Add some separation between bars
-            margin.top + (1 - d / Math.max(...this.data)) * height,
+            margin.top + ((maxx/rend*height)-(d/rend*height)),
             barWidth - 20, // Reduce the width to include separation
-            d / Math.max(...this.data) * height
+            d / rend * height
           );
         } else if (i === 2) {
           d = this.data[i] + this.data[i - 1];
           ctx.fillStyle = barColor;
           ctx.fillRect(
             margin.left + i * barWidth + 10, // Add some separation between bars
-            margin.top + (1 - d / Math.max(...this.data)) * height,
+            margin.top + ((maxx/rend*height)-(d/rend*height)),
             barWidth - 20, // Reduce the width to include separation
-            d / Math.max(...this.data) * height
+            d / rend * height
           );
 
           ctx.fillStyle = "rgba(255, 255, 255, 1)";
           ctx.fillRect(
             margin.left + i * barWidth + 10, // Add some separation between bars
-            margin.top + (1 - this.data[i - 1] / Math.max(...this.data)) * height,
+            margin.top + ((maxx/rend*height)-(this.data[i - 1]/rend*height)),
             barWidth - 20, // Reduce the width to include separation
-            this.data[i - 1] / Math.max(...this.data) * height
+            this.data[i - 1] / rend * height
           );
         } 
         else if (i === 3) {
           ctx.fillStyle = barColor;
           ctx.fillRect(
             margin.left + i * barWidth + 10, // Add some separation between bars
-            margin.top + (1 - d / Math.max(...this.data)) * height,
+            margin.top + ((maxx/rend*height)-(d/rend*height)),
             barWidth - 20, // Reduce the width to include separation
-            d / Math.max(...this.data) * height
+            d / rend * height
           );
         } 
         else {
           ctx.fillStyle = barColor;
           ctx.fillRect(
             margin.left + i * barWidth + 10, // Add some separation between bars
-            margin.top + (1 - d / Math.max(...this.data)) * height,
+            margin.top + ((maxx/rend*height)-(d/rend*height)),
             barWidth - 20, // Reduce the width to include separation
-            d / Math.max(...this.data) * height
+            d / rend * height
           );
         }
 
@@ -134,7 +148,7 @@
 
         // Draw the number above the bar
         if (i === 2) {
-          d = d - this.data[i - 1];
+          d = this.data[2] ;
           const formattedInnerValue = this.formatter.format(d);
           ctx.fillStyle = "black";
           ctx.font = "13px Arial";
@@ -142,7 +156,7 @@
           ctx.fillText(
             formattedInnerValue, // Use formatted value
             margin.left + i * barWidth + barWidth / 2, // Center text horizontally
-            margin.top + (1 - (d + this.data[i - 1]) / Math.max(...this.data)) * height - 5 // Place text above the bar
+            margin.top + ((maxx/rend*height)-(this.data[3]/rend*height)) - 5 // Place text above the bar
           );
         } else {
           ctx.fillStyle = "black";
@@ -151,7 +165,7 @@
           ctx.fillText(
             formattedValue, // Use formatted value
             margin.left + i * barWidth + barWidth / 2, // Center text horizontally
-            margin.top + (1 - d / Math.max(...this.data)) * height - 5 // Place text above the bar
+            margin.top + ((maxx/rend*height)-(d/rend*height)) - 5 // Place text above the bar
           );
         }
 
@@ -168,10 +182,28 @@
 
       // Draw x-axis
       ctx.beginPath();
-      ctx.moveTo(margin.left, margin.top + height);
-      ctx.lineTo(margin.left + width, margin.top + height);
+      ctx.moveTo(margin.left, margin.top +  maxx/ rend * height);
+      ctx.lineTo(margin.left + width, margin.top +  maxx/ rend * height);
       ctx.strokeStyle = "black";
       ctx.lineWidth = 2;
+      ctx.stroke();
+
+
+
+
+      ctx.beginPath();
+      ctx.moveTo(margin.left + 1 * barWidth + 10, margin.top + ((maxx/rend*height)-(this.data[1]/rend*height)) );
+      ctx.lineTo(margin.left + 2 * barWidth + 10, margin.top + ((maxx/rend*height)-(this.data[1]/rend*height)) );
+      ctx.strokeStyle = "rgb(191, 191, 191)";
+      ctx.lineWidth = 1;
+      ctx.stroke();
+
+
+      ctx.beginPath();
+      ctx.moveTo(margin.left + 2 * barWidth + 10, margin.top + ((maxx/rend*height)-(this.data[3]/rend*height)) );
+      ctx.lineTo(margin.left + 3 * barWidth + 10, margin.top + ((maxx/rend*height)-(this.data[3]/rend*height)));
+      ctx.strokeStyle = "rgb(191, 191, 191)";
+      ctx.lineWidth = 1;
       ctx.stroke();
     }
   }
@@ -179,4 +211,3 @@
   customElements.define("bar-plot", BarPlot);
 
 })();
-
