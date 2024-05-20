@@ -134,13 +134,26 @@
           );
         } 
         else {
+
+          if (d<0){
           ctx.fillStyle = barColor;
           ctx.fillRect(
             margin.left + i * barWidth + 10, // Add some separation between bars
             margin.top + ((maxx/rend*height)-(d/rend*height)),
             barWidth - 20, // Reduce the width to include separation
             d / rend * height
+          );}
+
+          else {
+          ctx.fillStyle = "rgb(33, 168, 40)";
+          ctx.fillRect(
+            margin.left + i * barWidth + 10, // Add some separation between bars
+            margin.top + ((maxx/rend*height)-(d/rend*height)),
+            barWidth - 20, // Reduce the width to include separation
+            d / rend * height
           );
+
+          }
         }
 
         // Format the number
@@ -159,6 +172,8 @@
             margin.top + ((maxx/rend*height)-(this.data[3]/rend*height)) - 5 // Place text above the bar
           );
         } else {
+
+          if (this.data[i] > 0){
           ctx.fillStyle = "black";
           ctx.font = "13px Arial";
           ctx.textAlign = "center";
@@ -167,6 +182,17 @@
             margin.left + i * barWidth + barWidth / 2, // Center text horizontally
             margin.top + ((maxx/rend*height)-(d/rend*height)) - 5 // Place text above the bar
           );
+        }
+        else {
+          ctx.fillStyle = "black";
+          ctx.font = "13px Arial";
+          ctx.textAlign = "center";
+          ctx.fillText(
+            formattedValue, // Use formatted value
+            margin.left + i * barWidth + barWidth / 2, // Center text horizontally
+            margin.top + (  maxx/ rend * height) - 5 // Place text above the bar
+          );
+        }
         }
 
         // Draw the column labels
@@ -211,3 +237,4 @@
   customElements.define("bar-plot", BarPlot);
 
 })();
+
