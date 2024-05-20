@@ -82,8 +82,18 @@
 
 
 
-      const rend= Math.max(...this.data)- Math.min(...this.data);
-      const maxx= Math.max(...this.data)
+      let rend;
+      let maxx;
+      if (Math.min(...this.data)<0){
+       rend= Math.max(...this.data)- Math.min(...this.data);
+       maxx= Math.max(...this.data)
+      }
+      else {
+         rend= Math.max(...this.data);
+         maxx= Math.max(...this.data)
+      }
+
+      
       // Draw bars using a for loop
       for (let i = 0; i < this.data.length; i++) {
         let d = this.data[i];
