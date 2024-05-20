@@ -389,6 +389,6 @@ else {const formattedInnerValue = this.formatter.format(d);
     }
   }
 
-  customElements.define("bar-plot-saving_prova", BarPlot);
+  customElements.define("bar-plot-saving", BarPlot);
 
 })();
