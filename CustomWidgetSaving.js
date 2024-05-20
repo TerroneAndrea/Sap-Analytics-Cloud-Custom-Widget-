@@ -56,12 +56,13 @@
        }
       else {
         
-        this.data = [];
+        this.data1 = [];
         var rawMeasures = dataBinding.data[0]; // Select the first item in the 'data' array
-        this.data = Object.keys(rawMeasures).map(key => rawMeasures[key].raw);
+        this.data1 = Object.keys(rawMeasures).map(key => rawMeasures[key].raw);
           
       }
 
+      this.data= [this.data1[0],this.data1[1],this.data1[2],this.data1[3],this.data1[4],this.data1[3]+this.data1[4]-this.data1[1],this.data1[3]+this.data1[4]-this.data1[0]]
       const ctx = this.canvas.getContext("2d");
 
       // Clear the canvas
@@ -388,6 +389,6 @@ else {const formattedInnerValue = this.formatter.format(d);
     }
   }
 
-  customElements.define("bar-plot-saving", BarPlot);
+  customElements.define("bar-plot-saving_prova", BarPlot);
 
 })();
