@@ -62,7 +62,8 @@
           
       }
 
-      this.data= [this.data1[0],this.data1[1],this.data1[2],this.data1[3],this.data1[4],this.data1[3]+this.data1[4]-this.data1[1],this.data1[3]+this.data1[4]-this.data1[0]]
+      this.data= [this.data1[0],this.data1[1],this.data1[2],this.data1[3],this.data1[4],this.data1[3]+this.data1[4]-this.data1[1],this.data1[3]+this.data1[4]-this.data1[0] ]
+      this.data2= [this.data1[0],this.data1[1],this.data1[2],this.data1[3],this.data1[4],this.data1[3]+this.data1[4]-this.data1[1],this.data1[3]+this.data1[4]-this.data1[0],this.data1[8],this.data1[9],this.data1[10] ]
       const ctx = this.canvas.getContext("2d");
 
       // Clear the canvas
@@ -76,7 +77,7 @@
       const width = this.canvas.width - margin.left - margin.right;
       const height = this.canvas.height - margin.top - margin.bottom;
 
-      const barWidth = width / this.data.length;
+      const barWidth = width / 7;
       
       const columnLabels = ['INITIAL', 'ROLLING', 'ACTUAL', 'FORECAST', 'FY','GAP INIT', 'GAP ROLL'];
 
@@ -95,7 +96,7 @@
 
       
       // Draw bars using a for loop
-      for (let i = 0; i < this.data.length; i++) {
+      for (let i = 0; i < 7; i++) {
         let d = this.data[i];
         let barColor;
         if (i === 0 || i === 1) barColor = "rgb(33, 168, 40)"; // First number in green
@@ -231,6 +232,21 @@
         margin.left + i * barWidth + barWidth / 2, // Center text horizontally
         margin.top + ((maxx/rend*height)-(d/rend*height)) - 5 // Place text above the bar
       );
+
+      d = ((this.data2[1]/this.data2[7])*100);
+let FformattedInnerValue = this.formatter.format(d);
+let textToDisplay = `${FformattedInnerValue}%`; // Add percentage symbol
+
+ctx.fillStyle = "black";
+ctx.font = "11px Arial";
+ctx.textAlign = "center";
+ctx.fillText(
+  textToDisplay, // Use the new string with the percentage symbol
+  margin.left + i * barWidth + barWidth / 2, // Center text horizontally
+  margin.top + height + 30 // Place text above the bar
+);
+
+    
         }
            else if (i===2) {
              d = this.data[3];
@@ -243,6 +259,19 @@
         margin.left + i * barWidth + barWidth / 2, // Center text horizontally
         margin.top + ((maxx/rend*height)-(d/rend*height)) - 5 // Place text above the bar
       );
+
+      d = (this.data2[3]/this.data2[8])*100;
+let FformattedInnerValue = this.formatter.format(d);
+let textToDisplay = `${FformattedInnerValue}%`; // Add percentage symbol
+
+ctx.fillStyle = "black";
+ctx.font = "11px Arial";
+ctx.textAlign = "center";
+ctx.fillText(
+  textToDisplay, // Use the new string with the percentage symbol
+  margin.left + i * barWidth + barWidth / 2, // Center text horizontally
+  margin.top + height + 30 // Place text above the bar
+);
         }
 
         else if (i===3) {
@@ -267,6 +296,20 @@ ctx.fillText(
   margin.left + i * barWidth + barWidth / 2, // Center text horizontally
   margin.top + ((maxx/rend*height)-(this.data[3]/rend*height)) - 5 // Place text above the bar
 );}
+
+
+d= (this.data2[4]/this.data2[9])*100;
+let FformattedInnerValue = this.formatter.format(d);
+let textToDisplay = `${FformattedInnerValue}%`; // Add percentage symbol
+
+ctx.fillStyle = "black";
+ctx.font = "11px Arial";
+ctx.textAlign = "center";
+ctx.fillText(
+  textToDisplay, // Use the new string with the percentage symbol
+  margin.left + i * barWidth + barWidth / 2, // Center text horizontally
+  margin.top + height + 30 // Place text above the bar
+);
      }
 
 
@@ -295,6 +338,21 @@ ctx.fillText(
  margin.top +  maxx/ rend * height  - 5 // Place text above the bar
 );
 }
+
+d= (this.data2[2]/this.data2[7])*100;
+let FformattedInnerValue = this.formatter.format(d);
+let textToDisplay = `${FformattedInnerValue}%`; // Add percentage symbol
+
+ctx.fillStyle = "black";
+ctx.font = "11px Arial";
+ctx.textAlign = "center";
+ctx.fillText(
+  textToDisplay, // Use the new string with the percentage symbol
+  margin.left + i * barWidth + barWidth / 2, // Center text horizontally
+  margin.top + height + 30 // Place text above the bar
+);
+
+
  }
 
 
@@ -321,6 +379,20 @@ else {const formattedInnerValue = this.formatter.format(d);
   margin.left + i * barWidth + barWidth / 2, // Center text horizontally
   margin.top +  maxx/ rend * height -d / rend * height - 5 // Place text above the bar
   );}
+
+
+  d= (this.data2[6]/this.data2[0])*100;
+let FformattedInnerValue = this.formatter.format(d);
+let textToDisplay = `${FformattedInnerValue}%`; // Add percentage symbol
+
+ctx.fillStyle = "black";
+ctx.font = "11px Arial";
+ctx.textAlign = "center";
+ctx.fillText(
+  textToDisplay, // Use the new string with the percentage symbol
+  margin.left + i * barWidth + barWidth / 2, // Center text horizontally
+  margin.top + height + 30 // Place text above the bar
+);
 }
 
 
@@ -348,25 +420,39 @@ else {const formattedInnerValue = this.formatter.format(d);
   margin.left + i * barWidth + barWidth / 2, // Center text horizontally
   margin.top +  maxx/ rend * height -d / rend * height - 5 // Place text above the bar
   );}
+
+
+  d= (this.data2[5]/this.data2[1])*100;
+let FformattedInnerValue = this.formatter.format(d);
+let textToDisplay = `${FformattedInnerValue}%`; // Add percentage symbol
+
+ctx.fillStyle = "black";
+ctx.font = "11px Arial";
+ctx.textAlign = "center";
+ctx.fillText(
+  textToDisplay, // Use the new string with the percentage symbol
+  margin.left + i * barWidth + barWidth / 2, // Center text horizontally
+  margin.top + height + 30 // Place text above the bar
+);
 }
 
     //QUA//QUA//QUA//QUA//QUA
 
 
 
-
+    
 
 
         
 
 
       ctx.fillStyle = "black";
-      ctx.font = "10px Arial";
+      ctx.font = "11px Arial";
       ctx.textAlign = "center";
       ctx.fillText(
       columnLabels[i], // Column label
       margin.left + i * barWidth + barWidth / 2, // Center text horizontally
-      margin.top + height + 20 // Place text below the x-axis
+      margin.top + height + 15 // Place text below the x-axis
     );
       }
       
@@ -398,7 +484,6 @@ else {const formattedInnerValue = this.formatter.format(d);
 
     }
   }
-
   customElements.define("bar-plot-saving", BarPlot);
 
 })();
