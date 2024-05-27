@@ -452,7 +452,7 @@ ctx.fillText(
       ctx.fillText(
       columnLabels[i], // Column label
       margin.left + i * barWidth + barWidth / 2, // Center text horizontally
-      margin.top + height + 15 // Place text below the x-axis
+      margin.top + height + 14 // Place text below the x-axis
     );
       }
       
