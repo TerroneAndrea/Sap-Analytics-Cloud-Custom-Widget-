@@ -238,7 +238,7 @@ let FformattedInnerValue = this.formatter.format(d);
 let textToDisplay = `${FformattedInnerValue}%`; // Add percentage symbol
 
 ctx.fillStyle = "black";
-ctx.font = "11px Arial";
+ctx.font = "12px Arial";
 ctx.textAlign = "center";
 ctx.fillText(
   textToDisplay, // Use the new string with the percentage symbol
@@ -265,7 +265,7 @@ let FformattedInnerValue = this.formatter.format(d);
 let textToDisplay = `${FformattedInnerValue}%`; // Add percentage symbol
 
 ctx.fillStyle = "black";
-ctx.font = "11px Arial";
+ctx.font = "12px Arial";
 ctx.textAlign = "center";
 ctx.fillText(
   textToDisplay, // Use the new string with the percentage symbol
@@ -303,7 +303,7 @@ let FformattedInnerValue = this.formatter.format(d);
 let textToDisplay = `${FformattedInnerValue}%`; // Add percentage symbol
 
 ctx.fillStyle = "black";
-ctx.font = "11px Arial";
+ctx.font = "12px Arial";
 ctx.textAlign = "center";
 ctx.fillText(
   textToDisplay, // Use the new string with the percentage symbol
@@ -344,7 +344,7 @@ let FformattedInnerValue = this.formatter.format(d);
 let textToDisplay = `${FformattedInnerValue}%`; // Add percentage symbol
 
 ctx.fillStyle = "black";
-ctx.font = "11px Arial";
+ctx.font = "12px Arial";
 ctx.textAlign = "center";
 ctx.fillText(
   textToDisplay, // Use the new string with the percentage symbol
@@ -386,7 +386,7 @@ let FformattedInnerValue = this.formatter.format(d);
 let textToDisplay = `${FformattedInnerValue}%`; // Add percentage symbol
 
 ctx.fillStyle = "black";
-ctx.font = "11px Arial";
+ctx.font = "12px Arial";
 ctx.textAlign = "center";
 ctx.fillText(
   textToDisplay, // Use the new string with the percentage symbol
@@ -427,7 +427,7 @@ let FformattedInnerValue = this.formatter.format(d);
 let textToDisplay = `${FformattedInnerValue}%`; // Add percentage symbol
 
 ctx.fillStyle = "black";
-ctx.font = "11px Arial";
+ctx.font = "12px Arial";
 ctx.textAlign = "center";
 ctx.fillText(
   textToDisplay, // Use the new string with the percentage symbol
