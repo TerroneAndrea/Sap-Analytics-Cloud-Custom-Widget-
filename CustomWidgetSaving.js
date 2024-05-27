@@ -243,7 +243,7 @@ ctx.textAlign = "center";
 ctx.fillText(
   textToDisplay, // Use the new string with the percentage symbol
   margin.left + i * barWidth + barWidth / 2, // Center text horizontally
-  margin.top + height + 30 // Place text above the bar
+  margin.top + height + 28 // Place text above the bar
 );
 
     
@@ -270,7 +270,7 @@ ctx.textAlign = "center";
 ctx.fillText(
   textToDisplay, // Use the new string with the percentage symbol
   margin.left + i * barWidth + barWidth / 2, // Center text horizontally
-  margin.top + height + 30 // Place text above the bar
+  margin.top + height + 28 // Place text above the bar
 );
         }
 
@@ -308,7 +308,7 @@ ctx.textAlign = "center";
 ctx.fillText(
   textToDisplay, // Use the new string with the percentage symbol
   margin.left + i * barWidth + barWidth / 2, // Center text horizontally
-  margin.top + height + 30 // Place text above the bar
+  margin.top + height + 28 // Place text above the bar
 );
      }
 
@@ -349,7 +349,7 @@ ctx.textAlign = "center";
 ctx.fillText(
   textToDisplay, // Use the new string with the percentage symbol
   margin.left + i * barWidth + barWidth / 2, // Center text horizontally
-  margin.top + height + 30 // Place text above the bar
+  margin.top + height + 28 // Place text above the bar
 );
 
 
@@ -391,7 +391,7 @@ ctx.textAlign = "center";
 ctx.fillText(
   textToDisplay, // Use the new string with the percentage symbol
   margin.left + i * barWidth + barWidth / 2, // Center text horizontally
-  margin.top + height + 30 // Place text above the bar
+  margin.top + height + 28 // Place text above the bar
 );
 }
 
@@ -432,7 +432,7 @@ ctx.textAlign = "center";
 ctx.fillText(
   textToDisplay, // Use the new string with the percentage symbol
   margin.left + i * barWidth + barWidth / 2, // Center text horizontally
-  margin.top + height + 30 // Place text above the bar
+  margin.top + height + 28 // Place text above the bar
 );
 }
 
