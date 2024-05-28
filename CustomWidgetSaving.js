@@ -79,7 +79,7 @@
 
       const barWidth = width / 7;
       
-      const columnLabels = ['INITIAL', 'ROLLING', 'ACTUAL ', '  FORECAST', 'FY','GAP INIT', 'GAP ROLL'];
+      const columnLabels = ['INITIAL', 'ROLLING', 'ACTUAL ', '  FORECAST', 'FY','GAP INIT ', ' GAP ROLL'];
 
 
 
