@@ -195,13 +195,6 @@
             d / rend * height
           );
           
-          //ctx.fillStyle = "rgba(255, 255, 255, 1)";  da scambiare con quello sopra
-          //ctx.fillRect(
-          //  margin.left + i * barWidth + 10, // Add some separation between bars
-          //  margin.top + (1 - (this.data[i+1]+this.data[i]) / rend) * height,
-          //  barWidth - 20, // Reduce the width to include separation
-          //  this.data[i+1] / rend * height
-         // );
 
         }
         else {
@@ -233,7 +226,7 @@
         margin.top + ((maxx/rend*height)-(d/rend*height)) - 5 // Place text above the bar
       );
 
-      d = ((this.data1[0]/this.data1[6])*100);
+      d = ((this.data1[0]/this.data1[7])*100);
           console.log(this.data1[0]);
           console.log(this.data1[1]);
           console.log(this.data1[2]);
