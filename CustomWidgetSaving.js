@@ -233,7 +233,7 @@
         margin.top + ((maxx/rend*height)-(d/rend*height)) - 5 // Place text above the bar
       );
 
-      d = ((this.data1[1]/this.data1[10])*100);
+      d = ((this.data1[0]/this.data1[6])*100);
           console.log(this.data1[0]);
           console.log(this.data1[1]);
           console.log(this.data1[2]);
