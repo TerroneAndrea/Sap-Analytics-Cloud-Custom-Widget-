@@ -233,8 +233,8 @@
         margin.top + ((maxx/rend*height)-(d/rend*height)) - 5 // Place text above the bar
       );
 
-      d = ((this.data2[1]/this.data1[10])*100);
-          console.log(this.data2[1]);
+      d = ((this.data1[1]/this.data1[10])*100);
+          console.log(this.data1[1]);
           console.log(this.data1[10]);
 let FformattedInnerValue = this.formatter.format(d);
 let textToDisplay = `${FformattedInnerValue}%`; // Add percentage symbol
