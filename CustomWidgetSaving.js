@@ -220,7 +220,7 @@
 
 
 
-        //QUA//QUA//QUA//QUA//QUA
+        //INIZIO SCRITTURA PERCENTUALI
         if (i===0 || i===1) {
           d = this.data[i];
           const formattedInnerValue = this.formatter.format(d);
@@ -233,7 +233,7 @@
         margin.top + ((maxx/rend*height)-(d/rend*height)) - 5 // Place text above the bar
       );
 
-      d = ((this.data2[1]/this.data2[7])*100);
+      d = ((this.data2[1]/this.data1[7])*100);
           console.log(this.data2[1]);
           console.log(this.data2[7]);
 let FformattedInnerValue = this.formatter.format(d);
