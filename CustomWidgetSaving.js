@@ -232,6 +232,7 @@
           console.log(this.data1[2]);
           console.log(this.data1[3]);
           console.log(this.data1[4]);
+          console.log(this.data1[5]);
           console.log(this.data1[6]);
           console.log(this.data1[7]);
           console.log(this.data1[8]);
