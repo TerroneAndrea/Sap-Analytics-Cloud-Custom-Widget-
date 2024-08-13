@@ -234,11 +234,16 @@
       );
 
       d = ((this.data1[1]/this.data1[10])*100);
-          console.log(this.data1[1]);
-          console.log(this.data1[10]);
           console.log(this.data1[0]);
+          console.log(this.data1[1]);
           console.log(this.data1[2]);
           console.log(this.data1[3]);
+          console.log(this.data1[4]);
+          console.log(this.data1[6]);
+          console.log(this.data1[7]);
+          console.log(this.data1[8]);
+          console.log(this.data1[9]);
+          console.log(this.data1[10]);
           console.log("CIAO");
 let FformattedInnerValue = this.formatter.format(d);
 let textToDisplay = `${FformattedInnerValue}%`; // Add percentage symbol
