@@ -53,7 +53,9 @@
         const img = new Image();
         img.src = 'https://terroneandrea.github.io/Sap-Analytics-Cloud-Custom-Widget-/prova.jpeg';
         img.onload = () => {
-          ctx.drawImage(img, 0, 0);
+          const scaledWidth = 500;  // Desired width
+          const scaledHeight = 500; // Desired height
+          ctx.drawImage(img, 0, 0, scaledWidth, scaledHeight);
         };
       } else {
         this.data = [];
