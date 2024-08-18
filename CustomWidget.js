@@ -51,7 +51,7 @@
 
       if (!dataBinding || dataBinding.state !== 'success') {
         const img = new Image();
-        img.src = './reply.png';
+        img.src = 'https://terroneandrea.github.io/Sap-Analytics-Cloud-Custom-Widget-/prova.jpeg';
         img.onload = () => {
           ctx.drawImage(img, 0, 0);
         };
